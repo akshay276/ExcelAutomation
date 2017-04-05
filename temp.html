@@ -1,0 +1,66 @@
+<!doctype html>
+<html ng-app="app">
+<head>
+
+<script
+	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.js"></script>
+
+<script
+	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-touch.js"></script>
+<script
+	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-animate.js"></script>
+<script src="http://ui-grid.info/docs/grunt-scripts/csv.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-grid/4.0.2/ui-grid.js"></script>
+<script src="http://ui-grid.info/docs/grunt-scripts/vfs_fonts.js"></script>
+<script src="temp.js"></script>
+<link rel="stylesheet" href="http://ui-grid.info/release/ui-grid.css"
+	type="text/css">
+<!-- <link rel="stylesheet" href="Scripts/ui-grid.css" type="text/css"> -->
+</head>
+<style>
+</style>
+<body>
+
+
+	<div ng-controller="MainCtrl">
+
+
+		P Grid: <input type="checkbox" ng-model="PGrid"> G Grid: <input
+			type="checkbox" ng-model="GGrid">
+
+
+
+		<!-- For P type -->
+
+
+		<div ng-show="PGrid">
+
+
+			<div ui-grid="gridOptions" ui-grid-edit ui-grid-cellnav
+				ui-grid-resize-columns ui-grid-selection ui-grid-exporter
+				class="grid"></div>
+
+			<input type="button" ng-click="exportCsv()" value="Export" />
+		</div>
+
+
+		<!-- For G type -->
+
+
+		<div ng-show="GGrid">
+
+
+			<div ui-grid="gridOptions1" ui-grid-edit ui-grid-cellnav
+				ui-grid-resize-columns ui-grid-selection ui-grid-exporter
+				class="grid"></div>
+
+			<input type="button" ng-click="exportCsv1()" value="Export" />
+		</div>
+
+
+	</div>
+
+
+</body>
+</html>
